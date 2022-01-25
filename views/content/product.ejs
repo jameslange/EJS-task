@@ -1,0 +1,19 @@
+<h1 class="display-4 text-center">Home Page</h1>
+<div class="row">
+    <% data.forEach(element => {%>
+    <div class="col-md-4 mb-4">
+    <div class="card">
+    <div class="card-header bg-dark">
+    <%= element.name %>
+    </div>
+    <div class="card-body text-dark">
+    <blockquote class="blockquote mb-0">
+    <img class="product-logo" src="<%= element.logo%>" alt="">
+    <p><%= element.description %></p>
+    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+    </div>
+    </div>
+    </div>
+    <% }) %>
+    </div> 
