@@ -7,8 +7,8 @@ route.get("/", (req, res) => {
         fs.readFile(path.join(__dirname, '../data/products.json'), (error, data)=>{
             if(error) throw error;
             let categories= [];
-      
-            let categoryArray=JSON.parse(data.toString()).forEach(item=> !categories.includes(item.category) && categories.push(item.category));
+            
+            JSON.parse(data.toString()).forEach(item=> !categories.includes(item.category) && categories.push(item.category));
             
             let products= JSON.parse(data.toString()).filter(item=>item.category===req.query.category);
             res.render("mainTemplate", {

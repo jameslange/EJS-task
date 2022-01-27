@@ -5,16 +5,18 @@
         <form action="/products", method="GET">
             <div class = "form-group">
                 <label for="">Select Category</label>
-                <select onchange='this.form.submit()' class="form-select" name="category" id="">
-                    <option value = "All">All Category</option>
+                <select onchange='this.form.submit()' class="form-select" name="category" id="parent">
+                    <option  value = "All">All Category</option>
                         <% category.forEach(item=> {%>
-                        <option value=<%= item %>><%=item%></option>
+                        <option onclick=handleClick(this) value=<%= item %>><%=item%></option>
                         <% }) %>
                 </select>
             </div>
         </form>
     </div>
 </div>
+
+
 
 <hr>
 <div class="row">
